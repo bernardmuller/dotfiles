@@ -5,7 +5,6 @@
 	home.homeDirectory = "/home/bernard";
 	home.stateVersion = "25.05";
 
-
 	programs.bash = {
 		enable = true;
 		shellAliases = {
@@ -18,7 +17,8 @@
 		'';
 	};
 
-	home.file.".config/hypr".source = ./hypr;
+	home.file.".config/hypr".source = ./config/hypr;
+	home.file.".config/awww".source = ./config/awww;
 
 	home.packages = with pkgs; [
 		bat
@@ -30,4 +30,11 @@
 		# email = "b.mullerjnr@gmail.com";
 	};
 
+	services.hyprpaper = {
+		enable = true;
+		settings = {
+			preload = [ "~/dotfiles/config/hypr/earth.jpg" ];
+			wallpaper = [ "HDMI-A-1,~/dotfiles/config/hypr/earth.jpg" ];
+		};
+	};
 }
