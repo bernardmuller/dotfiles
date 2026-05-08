@@ -10,6 +10,7 @@
 		shellAliases = {
 			btw = "echo i use nixos btw";
 			nrs = "sudo nixos-rebuild switch --flake ~/dotfiles#webber";
+			hr = "sudo rm -rf ~/.config/hypr && nrs";
 		};
 
 		initExtra = ''
@@ -18,7 +19,6 @@
 	};
 
 	home.file.".config/hypr".source = ./config/hypr;
-	home.file.".config/awww".source = ./config/awww;
 
 	home.packages = with pkgs; [
 		bat
@@ -28,13 +28,5 @@
 		enable = true;
 		userName = "bernardmuller";
 		# email = "b.mullerjnr@gmail.com";
-	};
-
-	services.hyprpaper = {
-		enable = true;
-		settings = {
-			preload = [ "~/dotfiles/config/hypr/earth.jpg" ];
-			wallpaper = [ "HDMI-A-1,~/dotfiles/config/hypr/earth.jpg" ];
-		};
 	};
 }
