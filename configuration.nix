@@ -9,8 +9,9 @@
 
   home-manager.useUserPackages = true;
   home-manager.useGlobalPkgs = true;
-  home-manager.backupFileExtension = "backup";
+  home-manager.extraSpecialArgs = { inherit inputs; };
   home-manager.users.bernard = import ./home.nix;
+  home-manager.backupFileExtension = "backup";
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;

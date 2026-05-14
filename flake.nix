@@ -8,6 +8,14 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 		awww.url = "git+https://codeberg.org/LGFae/awww";
+		vicinae = {
+    			url = "github:vicinaehq/vicinae";
+    			inputs.nixpkgs.follows = "nixpkgs";
+  		};
+		vicinae-extensions = {
+			url = "github:vicinaehq/extensions";
+  			inputs.nixpkgs.follows = "nixpkgs";
+		};
 	};
 
 	outputs = { self, nixpkgs, home-manager, ...}@inputs: {

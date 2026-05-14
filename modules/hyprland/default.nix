@@ -8,7 +8,8 @@
       # ─── Variables ──────────────────────────────────────────────────
       "$terminal" = "kitty";
       "$fileManager" = "pcmanfm";
-      "$menu" = "rofi -show drun";
+      # "$menu" = "rofi -show drun";
+      "$menu" = "vicinae toggle";
       "$browser" = "brave";
       "$mainMod" = "SUPER";
 
