@@ -1,7 +1,11 @@
 { config, pkgs, ...}:
 
 {
-	imports = [ ./modules/hyprland/default.nix ];
+	imports = [ 
+		./modules/hyprland/default.nix
+		./modules/hyprland/hyprlock.nix
+		./modules/hyprland/hypridle.nix
+	];
 
 	home.username = "bernard";
 	home.homeDirectory = "/home/bernard";
@@ -23,11 +27,21 @@
 	home.packages = with pkgs; [
 		bat
 		waybar
+		libnotify
 	];
 
 	programs.git = {
 		enable = true;
 		userName = "bernardmuller";
 		# email = "b.mullerjnr@gmail.com";
+	};
+
+	services.mako = {
+  		enable = true;
+  		settings = {
+    			default-timeout = 5000;     # ms before notification disappears
+    			border-radius = 6;
+    			font = "JetBrains Mono 11";
+  		};
 	};
 }
