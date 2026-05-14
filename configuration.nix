@@ -23,20 +23,6 @@
 
   i18n.defaultLocale = "en_ZA.UTF-8";
 
-  services.xserver = {
-  	enable = true;
-	displayManager = {
-		lightdm = {
-			enable = true;
-			greeters.gtk.enable = true;
-		};
-	};
-	xkb = {
-    		layout = "za";
-    		variant = "";
-  	};
-  };
-
   services.printing.enable = true;
 
   services.pulseaudio.enable = false;
@@ -47,6 +33,16 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     jack.enable = true;
+  };
+
+  services.greetd = {
+	enable = true;
+	settings = rec {
+		default_session = {
+			command = "Hyprland";
+			user = "bernard";
+		};
+	};
   };
 
 
@@ -68,7 +64,7 @@
     btop
     lightdm
     pcmanfm
-    wofi
+    rofi
     git
     pfetch
     unzip
@@ -76,13 +72,13 @@
 	steam
 	ckan
 	spotify
-	waybar
     inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww
   #  wget
   ];
 
   programs.steam.enable = true;
   programs.hyprland.enable = true;
+  security.pam.services.hyprlock = {};
 
   fonts.packages = with pkgs; [
   	jetbrains-mono

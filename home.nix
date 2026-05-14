@@ -1,6 +1,8 @@
 { config, pkgs, ...}:
 
 {
+	imports = [ ./modules/hyprland/default.nix ];
+
 	home.username = "bernard";
 	home.homeDirectory = "/home/bernard";
 	home.stateVersion = "25.05";
@@ -18,10 +20,9 @@
 		'';
 	};
 
-	home.file.".config/hypr".source = ./config/hypr;
-
 	home.packages = with pkgs; [
 		bat
+		waybar
 	];
 
 	programs.git = {
