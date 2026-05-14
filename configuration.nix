@@ -39,7 +39,7 @@
 	enable = true;
 	settings = rec {
 		default_session = {
-			command = "Hyprland";
+			command = "start-hyprland";
 			user = "bernard";
 		};
 	};
