@@ -5,20 +5,16 @@
     systemd.enable = true;
 
     settings = {
-      # ─── Variables ──────────────────────────────────────────────────
       "$terminal" = "kitty";
       "$fileManager" = "pcmanfm";
-      # "$menu" = "rofi -show drun";
       "$menu" = "vicinae toggle";
       "$browser" = "brave";
       "$mainMod" = "SUPER";
 
-      # ─── Monitors ───────────────────────────────────────────────────
       monitor = [
         ",preferred,auto,auto"
       ];
 
-      # ─── Autostart ──────────────────────────────────────────────────
       exec-once = [
         "awww-daemon & sleep 0.25"
         "hyprlock || hyprctl dispatch exit"
@@ -29,13 +25,12 @@
         "awww img ~/walls/wallpaper.jpg --transition-type none"
       ];
 
-      # ─── Environment variables ──────────────────────────────────────
       env = [
+      	"HYPRCURSOR_THEME,volantes_light_cursors"
         "XCURSOR_SIZE,12"
         "HYPRCURSOR_SIZE,12"
       ];
 
-      # ─── General ────────────────────────────────────────────────────
       general = {
         gaps_in = 4;
         gaps_out = 8;
@@ -44,10 +39,9 @@
         "col.inactive_border" = "rgba(595959aa)";
         resize_on_border = false;
         allow_tearing = false;
-        layout = "dwindle";
+        layout = "master";
       };
 
-      # ─── Decoration ─────────────────────────────────────────────────
       decoration = {
         rounding = 2;
         rounding_power = 1;
@@ -69,7 +63,6 @@
         };
       };
 
-      # ─── Animations ─────────────────────────────────────────────────
       animations = {
         enabled = false;
 
@@ -102,7 +95,6 @@
         ];
       };
 
-      # ─── Layouts ────────────────────────────────────────────────────
       dwindle = {
         pseudotile = true;
         preserve_split = true;
@@ -112,13 +104,11 @@
         new_status = "master";
       };
 
-      # ─── Misc ───────────────────────────────────────────────────────
       misc = {
         force_default_wallpaper = -1;
         disable_hyprland_logo = false;
       };
 
-      # ─── Input ──────────────────────────────────────────────────────
       input = {
         kb_layout = "us";
         kb_variant = "";
@@ -127,6 +117,8 @@
         kb_rules = "";
         follow_mouse = 1;
         sensitivity = 0;
+	repeat_rate = 50;
+	repeat_delay = 200;
         touchpad = {
           natural_scroll = false;
         };
@@ -141,7 +133,6 @@
         sensitivity = -0.5;
       };
 
-      # ─── Keybindings ────────────────────────────────────────────────
       bind = [
         "$mainMod, return, exec, $terminal"
         "$mainMod, W, killactive,"
@@ -154,13 +145,26 @@
         "$mainMod, B, exec, $browser"
 	"$mainMod, A, exec, kitty wiremix"
 
-        # Move focus
         "$mainMod, left,  movefocus, l"
         "$mainMod, right, movefocus, r"
         "$mainMod, up,    movefocus, u"
         "$mainMod, down,  movefocus, d"
 
-        # Switch workspaces
+        "$mainMod, H,  movefocus, l"
+        "$mainMod, L, movefocus, r"
+        "$mainMod, K,    movefocus, u"
+        "$mainMod, J,  movefocus, d"
+
+        "$mainMod SHIFT, H, movewindow, l"
+        "$mainMod SHIFT, L, movewindow, r"
+        "$mainMod SHIFT, K, movewindow, u"
+        "$mainMod SHIFT, J, movewindow, d"
+
+        "$mainMod ALT, H, resizeactive, -20 0"
+        "$mainMod ALT, L, resizeactive, 20 0"
+        "$mainMod ALT, K, resizeactive, 0 -20"
+        "$mainMod ALT, J, resizeactive, 0 20"
+
         "$mainMod, 1, workspace, 1"
         "$mainMod, 2, workspace, 2"
         "$mainMod, 3, workspace, 3"
@@ -172,7 +176,6 @@
         "$mainMod, 9, workspace, 9"
         "$mainMod, 0, workspace, 10"
 
-        # Move window to workspace
         "$mainMod SHIFT, 1, movetoworkspace, 1"
         "$mainMod SHIFT, 2, movetoworkspace, 2"
         "$mainMod SHIFT, 3, movetoworkspace, 3"
@@ -184,11 +187,9 @@
         "$mainMod SHIFT, 9, movetoworkspace, 9"
         "$mainMod SHIFT, 0, movetoworkspace, 10"
 
-        # Special workspace
         # "$mainMod,       S, togglespecialworkspace, magic"
         # "$mainMod SHIFT, S, movetoworkspace, special:magic"
 
-        # Scroll through workspaces
         "$mainMod, mouse_down, workspace, e+1"
         "$mainMod, mouse_up,   workspace, e-1"
       ];
