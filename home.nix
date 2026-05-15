@@ -3,6 +3,7 @@
 {
 	imports = [ 
 		./modules/hyprland/default.nix
+		./modules/hyprland/waybar.nix
 		./modules/hyprland/hyprlock.nix
 		./modules/hyprland/hypridle.nix
 		./modules/hyprland/hyprsunset.nix

@@ -37,10 +37,10 @@
 
       # ─── General ────────────────────────────────────────────────────
       general = {
-        gaps_in = 0;
-        gaps_out = 0;
+        gaps_in = 4;
+        gaps_out = 8;
         border_size = 1;
-        "col.active_border" = "rgb(acacac) rgb(d6d6d6) 45deg";
+        "col.active_border" = "rgb(ebdbb2)";
         "col.inactive_border" = "rgba(595959aa)";
         resize_on_border = false;
         allow_tearing = false;
@@ -49,8 +49,8 @@
 
       # ─── Decoration ─────────────────────────────────────────────────
       decoration = {
-        rounding = 0;
-        rounding_power = 0;
+        rounding = 2;
+        rounding_power = 1;
         active_opacity = 1.0;
         inactive_opacity = 1.0;
 
