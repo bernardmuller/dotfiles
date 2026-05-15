@@ -5,6 +5,7 @@
 		./modules/hyprland/default.nix
 		./modules/hyprland/hyprlock.nix
 		./modules/hyprland/hypridle.nix
+		./modules/hyprland/hyprsunset.nix
 	];
 
 	home.username = "bernard";

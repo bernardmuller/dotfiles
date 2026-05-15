@@ -65,7 +65,6 @@
     btop
     lightdm
     pcmanfm
-    rofi
     git
     pfetch
     unzip
