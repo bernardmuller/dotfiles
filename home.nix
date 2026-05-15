@@ -4,6 +4,7 @@
 	imports = [ 
 		./modules/hyprland/default.nix
 		./modules/hyprland/waybar.nix
+		./modules/launcher/vicinae.nix
 		./modules/hyprland/hyprlock.nix
 		./modules/hyprland/hypridle.nix
 		./modules/hyprland/hyprsunset.nix
@@ -35,63 +36,14 @@
 
 	programs.git = {
 		enable = true;
-		userName = "bernardmuller";
-		# email = "b.mullerjnr@gmail.com";
 	};
 
 	services.mako = {
   		enable = true;
   		settings = {
-    			default-timeout = 5000;     # ms before notification disappears
+    			default-timeout = 5000;  
     			border-radius = 6;
     			font = "JetBrains Mono 11";
   		};
 	};
-
-	programs.vicinae = {
-  enable = true;
-
-    		# package = pkgs.vicinae;
-  systemd = {
-    enable = true;
-    autoStart = true; # default: false
-    target = "hyprland-session.target";
-    # environment = {
-    #   USE_LAYER_SHELL = 1;
-    # };
-  };
-  settings = {
-    close_on_focus_loss = true;
-    consider_preedit = true;
-    pop_to_root_on_close = true;
-    favicon_service = "twenty";
-    search_files_in_root = true;
-    font = {
-      normal = {
-        size = 12;
-        family = "Maple Nerd Font";
-      };
-    };
-    theme = {
-      light = {
-        name = "vicinae-light";
-        icon_theme = "default";
-      };
-      dark = {
-        name = "vicinae-dark";
-        icon_theme = "default";
-      };
-    };
-    launcher_window = {
-      opacity = 0.98;
-    };
-  };
-  extensions = with inputs.vicinae-extensions.packages.${pkgs.stdenv.hostPlatform.system}; [
-     bluetooth
-     nix
-     power-profile
-    # Extension names can be found in the link below, it's just the folder names
-  ];
-};
-
 }
