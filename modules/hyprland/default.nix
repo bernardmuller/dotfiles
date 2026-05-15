@@ -37,10 +37,10 @@
 
       # ─── General ────────────────────────────────────────────────────
       general = {
-        gaps_in = 5;
-        gaps_out = 20;
-        border_size = 2;
-        "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+        gaps_in = 0;
+        gaps_out = 0;
+        border_size = 1;
+        "col.active_border" = "rgb(acacac) rgb(d6d6d6) 45deg";
         "col.inactive_border" = "rgba(595959aa)";
         resize_on_border = false;
         allow_tearing = false;
@@ -49,8 +49,8 @@
 
       # ─── Decoration ─────────────────────────────────────────────────
       decoration = {
-        rounding = 10;
-        rounding_power = 2;
+        rounding = 0;
+        rounding_power = 0;
         active_opacity = 1.0;
         inactive_opacity = 1.0;
 
@@ -71,7 +71,7 @@
 
       # ─── Animations ─────────────────────────────────────────────────
       animations = {
-        enabled = true;
+        enabled = false;
 
         bezier = [
           "easeOutQuint,   0.23, 1,    0.32, 1"
@@ -152,6 +152,7 @@
         "$mainMod, P, pseudo,"
         "$mainMod, J, togglesplit,"
         "$mainMod, B, exec, $browser"
+	"$mainMod, A, exec, kitty wiremix"
 
         # Move focus
         "$mainMod, left,  movefocus, l"
@@ -184,8 +185,8 @@
         "$mainMod SHIFT, 0, movetoworkspace, 10"
 
         # Special workspace
-        "$mainMod,       S, togglespecialworkspace, magic"
-        "$mainMod SHIFT, S, movetoworkspace, special:magic"
+        # "$mainMod,       S, togglespecialworkspace, magic"
+        # "$mainMod SHIFT, S, movetoworkspace, special:magic"
 
         # Scroll through workspaces
         "$mainMod, mouse_down, workspace, e+1"

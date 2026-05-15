@@ -29,6 +29,7 @@
 		bat
 		waybar
 		libnotify
+		wiremix
 	];
 
 	programs.git = {
