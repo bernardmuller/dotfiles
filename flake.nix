@@ -24,6 +24,7 @@
 			specialArgs = { inherit inputs; };
 			modules = [ 
 				./configuration.nix 
+				./containers/work.nix
 				home-manager.nixosModules.home-manager
 				{
 					home-manager = {
