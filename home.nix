@@ -1,5 +1,4 @@
 { config, pkgs, inputs, ...}:
-
 {
 	imports = [ 
 		./modules/hyprland/default.nix
@@ -8,6 +7,7 @@
 		./modules/hyprland/hyprlock.nix
 		./modules/hyprland/hypridle.nix
 		./modules/hyprland/hyprsunset.nix
+		./modules/home/terminal.nix
 	];
 
 	home.username = "bernard";

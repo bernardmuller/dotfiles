@@ -35,7 +35,7 @@
         gaps_in = 4;
         gaps_out = 8;
         border_size = 1;
-        "col.active_border" = "rgb(ebdbb2)";
+        "col.active_border" = "rgba(ebdbb2aa)";
         "col.inactive_border" = "rgba(595959aa)";
         resize_on_border = false;
         allow_tearing = false;
@@ -43,7 +43,7 @@
       };
 
       decoration = {
-        rounding = 2;
+        rounding = 5;
         rounding_power = 1;
         active_opacity = 1.0;
         inactive_opacity = 1.0;

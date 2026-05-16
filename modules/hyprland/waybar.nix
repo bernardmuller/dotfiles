@@ -82,6 +82,7 @@
         #waybar {
           background: #1d2021;
           color: #ebdbb2;
+          border: 1px solid #595959;
         }
         #workspaces button:nth-child(1)  { color: #fb4934; }
         #workspaces button:nth-child(2)  { color: #fe8019; }
