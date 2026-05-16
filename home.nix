@@ -8,6 +8,7 @@
 		./modules/hyprland/hypridle.nix
 		./modules/hyprland/hyprsunset.nix
 		./modules/home/terminal.nix
+		./modules/hyprland/hyprcursor.nix
 	];
 
 	home.username = "bernard";

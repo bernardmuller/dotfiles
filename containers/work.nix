@@ -1,5 +1,11 @@
 { config, pkgs, ... }: 
 {
+	networking.nat = {
+		enable = true;
+		internalInterfaces = [ "ve-+" ];
+		externalInterface = "wlp37s0";
+	};
+
 	containers.work = {
 		autoStart = true;
 	
@@ -42,7 +48,11 @@
 			  trustedInterfaces = [ "tailscale0" ];
 			  # Allow the Tailscale UDP port through the firewall
 			  allowedUDPPorts = [ config.services.tailscale.port ];
+			  checkReversePath = "loose";
 			};
+
+			networking.defaultGateway = "10.233.1.1";
+      			networking.nameservers = [ "1.1.1.1" "8.8.8.8" ];
 
 			# 2. Force tailscaled to use nftables (Critical for clean nftables-only systems)
 			# This avoids the "iptables-compat" translation layer issues.
