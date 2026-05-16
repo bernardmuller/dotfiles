@@ -7,6 +7,9 @@
 		hostAddress = "10.233.1.1";
 		localAddress = "10.233.1.2";
 
+		enableTun = true;         
+		additionalCapabilities = [ "CAP_NET_ADMIN" "CAP_SYS_ADMIN" ];
+
 		config = { config, pkgs, ... }: {
 			users.users.bernard = {
         			isNormalUser = true;
@@ -15,6 +18,12 @@
           				"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBY26prbNVsygyO7mRAMY+Z+uqhDCdvPN65C6QfkMruB"
         			];
       			};
+
+			security.sudo.wheelNeedsPassword = false;
+
+			environment.systemPackages = with pkgs; [
+  				kitty.terminfo
+			];
 
 			services.openssh = {
 			        enable = true;
