@@ -84,6 +84,13 @@
   	jetbrains-mono
   ];
 
+	containers.work = {
+		autoStart = true;
+		config = { config, pkgs, ... }: {
+			system.stateVersion = "25.11";
+		};
+	};
+
   	nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
     system.stateVersion = "25.11"; 
