@@ -33,7 +33,16 @@
   };
 
   environment.systemPackages = with pkgs; [
-    kitty.terminfo
+    	kitty.terminfo
+    	neovim
+  	tmux
+  	git
+	ripgrep
+	fd
+	fzf
+	bat
+	btop
+	curl
   ];
 
   system.stateVersion = "25.11";

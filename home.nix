@@ -33,6 +33,9 @@
 		waybar
 		libnotify
 		wiremix
+		localsend
+		zip
+		unzip
 	];
 
 	programs.git = {
