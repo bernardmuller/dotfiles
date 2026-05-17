@@ -17,7 +17,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "webber"; # Define your hostname.
-
+  networking.firewall.trustedInterfaces = [ "ve-+" ];
   networking.networkmanager.enable = true;
 
   time.timeZone = "Africa/Johannesburg";
@@ -45,7 +45,6 @@
 		};
 	};
   };
-
 
   users.users.bernard = {
     isNormalUser = true;

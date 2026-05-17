@@ -26,7 +26,20 @@
   networking.nameservers = [ "1.1.1.1" "8.8.8.8" ];
 
   networking.firewall = {
-    allowedTCPPorts = [ 22 ];
+    allowedTCPPorts = [ 
+    	22 
+	3000 
+	3001
+	3002
+	8080 
+	4321 
+	5432
+	6543
+	5000
+	6000
+	1337
+	5173
+    ];
     trustedInterfaces = [ "tailscale0" ];
     allowedUDPPorts = [ config.services.tailscale.port ];
     checkReversePath = "loose";
@@ -43,7 +56,12 @@
 	bat
 	btop
 	curl
+	devenv
+	direnv
+	nix-direnv
   ];
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   system.stateVersion = "25.11";
 } 
