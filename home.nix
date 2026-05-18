@@ -9,6 +9,7 @@
 		./modules/hyprland/hyprsunset.nix
 		./modules/home/terminal.nix
 		./modules/dev/shell/webber.nix
+		./modules/dev/shell/banner-webber.nix
 		./modules/hyprland/hyprcursor.nix
 	];
 
@@ -22,6 +23,7 @@
 			btw = "echo i use nixos btw";
 			nrs = "sudo nixos-rebuild switch --flake ~/dotfiles#webber";
 			hr = "sudo rm -rf ~/.config/hypr && nrs";
+			new-project = "~/dotfiles/scripts/new-project-host.sh";
 		};
 	};
 
@@ -31,13 +33,16 @@
 		libnotify
 		wiremix
 		localsend
-		zip
-		unzip
+    		pcmanfm
+    		brave
+    		inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
+    		steam
+    		ckan
+    		spotify
+		discord
 	];
 
-	programs.git = {
-		enable = true;
-	};
+	programs.git.enable = true;
 
 	services.mako = {
   		enable = true;

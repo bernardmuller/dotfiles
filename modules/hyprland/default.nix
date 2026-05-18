@@ -10,6 +10,7 @@
       "$menu" = "vicinae toggle";
       "$browser" = "brave";
       "$mainMod" = "SUPER";
+      "$bluetooth" = "bluetui";
 
       monitor = [
         ",preferred,auto,auto"
@@ -144,6 +145,7 @@
         "$mainMod, J, togglesplit,"
         "$mainMod, B, exec, $browser"
 	"$mainMod, A, exec, kitty wiremix"
+	"$mainMod, C, exec, $bluetooth"
 
         "$mainMod, left,  movefocus, l"
         "$mainMod, right, movefocus, r"

@@ -5,6 +5,7 @@
   	imports =
     	[ 
     		./hardware-configuration.nix
+		./modules/desktop/gaming.nix
     	];
 
   home-manager.useUserPackages = true;
@@ -18,11 +19,19 @@
 
   networking.hostName = "webber"; # Define your hostname.
   networking.firewall.trustedInterfaces = [ "ve-+" ];
+  networking.firewall.allowedTCPPorts = [ 53317 47984 47989 48010 47990 ];
+  networking.firewall.allowedUDPPorts = [ 53317  47998 47999 48000 48002 48010 ];
   networking.networkmanager.enable = true;
 
   time.timeZone = "Africa/Johannesburg";
 
   i18n.defaultLocale = "en_ZA.UTF-8";
+
+  fileSystems."/mnt/nvme" = {
+	device = "/dev/disk/by-uuid/44951677-c59c-42cc-8b1c-0e8a2345eec7";
+	fsType = "ext4";
+	options = [ "nofail" "rw"];
+  };
 
   services.printing.enable = true;
 
@@ -63,19 +72,16 @@
     neovim
     btop
     lightdm
-    pcmanfm
     git
     pfetch
+    zip
     unzip
-    brave
-	steam
-	ckan
-	spotify
     inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww
+    sunshine
+    bluetui
   #  wget
   ];
 
-  programs.steam.enable = true;
   programs.hyprland.enable = true;
   security.pam.services.hyprlock = {};
 
