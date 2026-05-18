@@ -10,6 +10,7 @@
       pgData = "$PWD/.devshell/postgres";
     in {
       devShells.${system}.default = pkgs.mkShell {
+      	name = "expenny";
         packages = with pkgs; [
           nodejs_22
           pnpm

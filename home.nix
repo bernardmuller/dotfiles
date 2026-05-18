@@ -8,6 +8,7 @@
 		./modules/hyprland/hypridle.nix
 		./modules/hyprland/hyprsunset.nix
 		./modules/home/terminal.nix
+		./modules/dev/shell/webber.nix
 		./modules/hyprland/hyprcursor.nix
 	];
 
@@ -22,10 +23,6 @@
 			nrs = "sudo nixos-rebuild switch --flake ~/dotfiles#webber";
 			hr = "sudo rm -rf ~/.config/hypr && nrs";
 		};
-
-		initExtra = ''
-		 	export PS1='\[\e[38;5;46m\]\u\[\e[0m\] in \[\e[38;5;39m\]\w\[\e[0m\] \\$ '
-		'';
 	};
 
 	home.packages = with pkgs; [

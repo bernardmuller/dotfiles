@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 
 {
+
+	imports = [
+    		../../modules/dev/shell/container.nix
+		];
   home.username = "bernard";
   home.homeDirectory = "/home/bernard";
   home.stateVersion = "25.11";
@@ -19,8 +23,6 @@
       pg-stop-here = ''nix shell nixpkgs#postgresql_16 -c pg_ctl -D "$PWD/.devshell/postgres" stop'';
     };
     initExtra = ''
-      export PS1='\[\e[38;5;46m\]\u@dev\[\e[0m\] in \[\e[38;5;39m\]\w\[\e[0m\] \\$ '
-
       # Enter the devShell for the current project.
       # Looks up /etc/dotfiles/projects/<dirname>/flake.nix and enters that shell.
       dev() {
