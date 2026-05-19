@@ -23,10 +23,10 @@ if [[ ! "$slug" =~ ^[a-z0-9-]+$ ]]; then
 fi
 
 flake_dir="$DOTFILES/projects/$slug"
-if [ -d "$flake_dir" ]; then
-  echo "error: $flake_dir already exists"
-  exit 1
-fi
+# if [ -d "$flake_dir" ]; then
+#   echo "error: $flake_dir already exists"
+#   exit 1
+# fi
 
 mkdir -p "$flake_dir"
 cat > "$flake_dir/flake.nix" <<EOF
