@@ -20,6 +20,8 @@
         "awww-daemon & sleep 0.25"
         "hyprlock || hyprctl dispatch exit"
         "hypridle"
+	"gsettings set org.gnome.desktop.interface gtk-theme 'Gruvbox'"
+	"gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'"
       ];
 
       exec = [
@@ -30,6 +32,7 @@
       	"HYPRCURSOR_THEME,volantes_light_cursors"
         "XCURSOR_SIZE,12"
         "HYPRCURSOR_SIZE,12"
+	"QT_QPA_PLATFORMTHEME,qt6ct"
       ];
 
       general = {
