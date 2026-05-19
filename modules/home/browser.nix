@@ -26,8 +26,9 @@
         };
       };
 
-      # --- Themes/mods from the Zen theme store ---
-      mods."ecda11ae-d3fd-4052-8881-303b2504e3ce" = { enable = true; };
+     	programs.zen-browser.profiles.default.mods = [
+     		"ecda11ae-d3fd-4052-8881-303b2504e3ce" 
+	];
     };
   };
 }
