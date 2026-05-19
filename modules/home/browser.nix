@@ -8,11 +8,6 @@
     profiles.default = {
       spacesForce = true;  
       spaces = {
-        "Personal" = {
-          id = "c6de089c-410d-4206-961d-ab11f988d40a";            position = 1000;
-
-          icon = "🏠";
-        };
         "Work" = {
           id = "cdd10fab-4fc5-494b-9041-325e5759195b";
           position = 2000;
@@ -32,7 +27,7 @@
       };
 
       # --- Themes/mods from the Zen theme store ---
-      # mods."<theme-id-from-zen-store>" = { enable = true; };
+      mods."ecda11ae-d3fd-4052-8881-303b2504e3ce" = { enable = true; };
     };
   };
 }
