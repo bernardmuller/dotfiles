@@ -17,9 +17,12 @@
   			inputs.nixpkgs.follows = "nixpkgs";
 		};
     		zen-browser = {
-      			url = "github:youwen5/zen-browser-flake";
-      			inputs.nixpkgs.follows = "nixpkgs";
-    		};
+      			url = "github:0xc000022070/zen-browser-flake";
+			inputs = {
+				nixpkgs.follows = "nixpkgs";
+				home-manager.follows = "home-manager";	
+			};
+    		};	
 	};
 
 	outputs = { self, nixpkgs, home-manager, ...}@inputs: {
@@ -34,6 +37,7 @@
 					home-manager = {
 						useGlobalPkgs = true;
 						useUserPackages = true;
+						extraSpecialArgs = { inherit inputs; };
 						users.bernard = import ./home.nix;
 						backupFileExtension = "backup";
 					};
