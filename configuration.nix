@@ -23,6 +23,10 @@
   networking.firewall.allowedUDPPorts = [ 53317  47998 47999 48000 48002 48010 ];
   networking.networkmanager.enable = true;
 
+  hardware.bluetooth.enable = true;
+hardware.bluetooth.powerOnBoot = true;
+services.blueman.enable = true; 
+
   time.timeZone = "Africa/Johannesburg";
 
   i18n.defaultLocale = "en_ZA.UTF-8";
