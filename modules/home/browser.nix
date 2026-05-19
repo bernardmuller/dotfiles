@@ -26,7 +26,7 @@
         };
       };
 
-     	programs.zen-browser.profiles.default.mods = [
+     	mods = [
      		"ecda11ae-d3fd-4052-8881-303b2504e3ce" 
 	];
     };
