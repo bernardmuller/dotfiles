@@ -5,6 +5,7 @@
   	imports =
     	[ 
     		./hardware-configuration.nix
+		./modules/dev/docker.nix
 		./modules/desktop/gaming.nix
     	];
 
@@ -59,10 +60,18 @@ services.blueman.enable = true;
 	};
   };
 
+  services.openssh = {
+  	enable = true;
+	settings = {
+		PasswordAuthentication = false;
+		PermitRootLogin = "no";
+	};
+  };
+
   users.users.bernard = {
     isNormalUser = true;
     description = "Bernard";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [
     #  thunderbird
     ];
