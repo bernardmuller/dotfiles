@@ -40,6 +40,7 @@
 	6000
 	1337
 	5173
+	6006
     ];
     trustedInterfaces = [ "tailscale0" ];
     allowedUDPPorts = [ config.services.tailscale.port ];
@@ -60,6 +61,7 @@
 	devenv
 	direnv
 	nix-direnv
+	docker-client
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

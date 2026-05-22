@@ -19,7 +19,17 @@
 				identityFile = "~/.ssh/lt_ed25519";
 				identitiesOnly = true;
 			};
+			"webber" = {
+				hostname = "10.233.1.1";
+  				user = "bernard";
+  				identityFile = "~/.ssh/webber_docker";
+  				identitiesOnly = true;	
+			};
 		};
+	};
+
+	home.sessionVariables = {
+		DOCKER_HOST = "ssh://webber";
 	};
 
 	programs.git = {

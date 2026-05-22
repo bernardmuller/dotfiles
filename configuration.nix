@@ -75,6 +75,9 @@ services.blueman.enable = true;
     packages = with pkgs; [
     #  thunderbird
     ];
+    openssh.authorizedKeys.keys = [
+    	"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF6bW1CqD/eco2vcdZe0vMDgU+XZlUXp9Ad63Z91kP9F dev-container-to-webber"
+    ];
   };
 
   nixpkgs.config.allowUnfree = true;
