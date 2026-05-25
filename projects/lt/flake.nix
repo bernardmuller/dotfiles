@@ -21,7 +21,13 @@
           claude-code
         ];
         shellHook = ''
-          source /etc/dotfiles/lib/project-identity.sh
+          	source /etc/dotfiles/lib/project-identity.sh
+
+		local layout_file="./layout.sh"
+
+		if [ -f "$id_file" ]; then
+	  		export TMUXIFIER_LAYOUT_PATH="./layout.sh"
+		fi
         '';
       };
     };
