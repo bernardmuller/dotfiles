@@ -62,6 +62,19 @@
 	direnv
 	nix-direnv
 	docker-client
+
+        # LSPs
+        pyright
+        rust-analyzer
+        typescript-language-server  # ts_ls
+        lua-language-server          # lua_ls
+        zls                          # zig
+        clang-tools                  # clangd + clang-format
+        vscode-langservers-extracted  # html, cssls, eslint
+        tailwindcss-language-server
+        prettierd
+        stylua
+        lazygit
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

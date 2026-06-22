@@ -6,8 +6,13 @@
   outputs = { self, nixpkgs }:
     let
       system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
       pgData = "$PWD/.devshell/postgres";
+      pkgs = import nixpkgs {
+        inherit system;
+        config.allowUnfreePredicate = pkg: builtins.elem (nixpkgs.lib.getName pkg) [
+          "claude-code"
+        ];
+      };
     in {
       devShells.${system}.default = pkgs.mkShell {
       	name = "expenny";
@@ -19,6 +24,11 @@
           gcc
           gnumake
           pkg-config
+	  typescript-language-server
+  	  typescript
+	  tsx
+	  deno
+          claude-code
         ];
 
         shellHook = ''

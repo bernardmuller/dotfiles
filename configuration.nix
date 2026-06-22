@@ -92,10 +92,12 @@ services.blueman.enable = true;
     pfetch
     zip
     unzip
+    unrar
+    p7zip
     inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww
     sunshine
     bluetui
-  #  wget
+          lazygit
   ];
 
   programs.hyprland.enable = true;
