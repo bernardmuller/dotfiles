@@ -100,6 +100,7 @@ services.blueman.enable = true;
     lazygit
     tree-sitter
     gcc
+    ripgrep
   ];
 
   programs.hyprland.enable = true;

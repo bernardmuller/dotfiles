@@ -65,6 +65,7 @@
 
   tree-sitter
   gcc
+  ripgrep
 
         # LSPs
         pyright
