@@ -40,6 +40,7 @@
     		ckan
     		spotify
 		discord
+		telegram-desktop
 	];
 
 	programs.git.enable = true;
