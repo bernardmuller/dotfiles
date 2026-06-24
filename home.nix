@@ -25,7 +25,7 @@
 			nrs = "sudo nixos-rebuild switch --flake ~/dotfiles#webber";
 			hr = "sudo rm -rf ~/.config/hypr && nrs";
 			new-project = "~/dotfiles/scripts/new-project-host.sh";
-			update-nvim = "nix flake lock --update-input nvim-cfg && sudo nixos-rebuild switch --flake .#webber && sudo nixos-container restart dev"
+			update-nvim = "nix flake lock --update-input nvim-cfg && sudo nixos-rebuild switch --flake .#webber && sudo nixos-container restart dev";
 		};
 	};
 
