@@ -107,10 +107,10 @@
     "nvim-cfg": {
       "flake": false,
       "locked": {
-        "lastModified": 1782283774,
-        "narHash": "sha256-OR9E0Ewti+9fh33qpdIdWvm++Cy4sPp3AGzPXOONa+Q=",
+        "lastModified": 1782294173,
+        "narHash": "sha256-CQT7b9Qod3TTwEdtpJX31LZrVPQiJ1PxUbff6Wjcw3g=",
         "ref": "refs/heads/master",
-        "rev": "31ae419f22fa627b8e95da155287822431b2c6a3",
+        "rev": "bffc4517f57bd417eea73ea1e2e9f2343f982c80",
         "revCount": 12,
         "type": "git",
         "url": "https://github.com/bernardmuller/nvim-config.git"
