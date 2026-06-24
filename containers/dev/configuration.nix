@@ -83,7 +83,8 @@
 
   systemd.tmpfiles.rules = [
     "d /home/bernard/.config 0755 bernard users -"
-    "C+ /home/bernard/.config/nvim 0755 bernard users - ${inputs.nvim-cfg}"
+    "C+ /home/bernard/.config/nvim - - - - ${inputs.nvim-cfg}"
+    "Z /home/bernard/.config/nvim 0644 bernard users -"
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
