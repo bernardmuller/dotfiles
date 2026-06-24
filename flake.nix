@@ -22,7 +22,11 @@
 				nixpkgs.follows = "nixpkgs";
 				home-manager.follows = "home-manager";	
 			};
-    		};	
+    		};
+		nvim-cfg = { 
+			url = "git@github.com:bernardmuller/nvim-config.git"; 
+			flake = false;
+		};
 	};
 
 	outputs = { self, nixpkgs, home-manager, ...}@inputs: {

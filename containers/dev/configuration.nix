@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   users.users.bernard = {
@@ -75,6 +75,11 @@
         prettierd
         stylua
         lazygit
+  ];
+
+  systemd.tmpfiles.rules = [
+    "d /home/bernard/.config 0755 bernard users -"
+    "L+ /home/bernard/.config/nvim - - - - ${inputs.nvim-cfg}"
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
