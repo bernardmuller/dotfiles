@@ -23,9 +23,9 @@
 				home-manager.follows = "home-manager";	
 			};
     		};
-		nvim-cfg = { 
-			url = "git@github.com:bernardmuller/nvim-config.git"; 
-			flake = false;
+		nvim-cfg = {
+  			url = "git+https://github.com/bernardmuller/nvim-config.git";
+  			flake = false;
 		};
 	};
 

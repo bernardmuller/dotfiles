@@ -104,11 +104,24 @@
         "type": "github"
       }
     },
+    "nvim-cfg": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-yDAO30sao15+UfM8toFTNiXqtVkCSXP1SDisttaPrTg=",
+        "type": "file",
+        "url": "https://github.com/bernardmuller/nvim-config.git"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/bernardmuller/nvim-config.git"
+      }
+    },
     "root": {
       "inputs": {
         "awww": "awww",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs_2",
+        "nvim-cfg": "nvim-cfg",
         "vicinae": "vicinae",
         "vicinae-extensions": "vicinae-extensions",
         "zen-browser": "zen-browser"
