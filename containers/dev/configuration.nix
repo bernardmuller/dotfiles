@@ -63,6 +63,9 @@
 	nix-direnv
 	docker-client
 
+  tree-sitter
+  gcc
+
         # LSPs
         pyright
         rust-analyzer

@@ -97,7 +97,9 @@ services.blueman.enable = true;
     inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww
     sunshine
     bluetui
-          lazygit
+    lazygit
+    tree-sitter
+    gcc
   ];
 
   programs.hyprland.enable = true;
