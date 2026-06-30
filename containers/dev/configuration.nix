@@ -81,11 +81,16 @@
         lazygit
   ];
 
-  systemd.tmpfiles.rules = [
-    "d /home/bernard/.config 0755 bernard users -"
-    "C+ /home/bernard/.config/nvim - - - - ${inputs.nvim-cfg}"
-    "Z /home/bernard/.config/nvim 0644 bernard users -"
-  ];
+  system.activationScripts.seedNvim = {
+    deps = [ "users" ];
+    text = ''
+      rm -rf /home/bernard/.config/nvim
+      install -d -o bernard -g users -m 0755 /home/bernard/.config
+      cp -rT ${inputs.nvim-cfg} /home/bernard/.config/nvim
+      chown -R bernard:users /home/bernard/.config/nvim
+      chmod -R u+rwX /home/bernard/.config/nvim
+    '';
+  };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
