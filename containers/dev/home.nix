@@ -13,12 +13,6 @@
 	programs.ssh = {
 		enable = true;
 		matchBlocks = {
-			"github-lt" = {
-				hostname = "github.com";
-				user = "git";
-				identityFile = "~/.ssh/lt_ed25519";
-				identitiesOnly = true;
-			};
 			"webber" = {
 				hostname = "10.233.1.1";
   				user = "bernard";
