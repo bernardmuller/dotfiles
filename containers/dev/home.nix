@@ -19,6 +19,12 @@
   				identityFile = "~/.ssh/webber_docker";
   				identitiesOnly = true;	
 			};
+			"bitbucket-ctp" = {
+				 hostname = "bitbucket.org";
+				 user = "git";
+				 identityFile = "~/.ssh/ctp_ed25519";
+				 identitiesOnly = true;
+		       };
 		};
 	};
 

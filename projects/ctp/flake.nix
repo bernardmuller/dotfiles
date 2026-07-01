@@ -1,5 +1,5 @@
 {
-  description = "cp devShell";
+  description = "ctp devShell";
 
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
@@ -15,7 +15,7 @@
       };
     in {
       devShells.${system}.default = pkgs.mkShell {
-      	name = "expenny";
+      	name = "ctp";
         packages = with pkgs; [
           nodejs_22
           pnpm
