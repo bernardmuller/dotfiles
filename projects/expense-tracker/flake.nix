@@ -24,15 +24,15 @@
           gcc
           gnumake
           pkg-config
-	  typescript-language-server
-  	  typescript
-	  tsx
-	  deno
+	        typescript-language-server
+  	      typescript
+	        tsx
+	        deno
           claude-code
         ];
 
         shellHook = ''
-          export PGDATA="${pgData}"
+          nxport PGDATA="${pgData}"
           export PGHOST="$PWD/.devshell"
           export PGPORT=5433
           export PGDATABASE=expense_tracker

@@ -1,21 +1,23 @@
 {
-  description = "ctp devShell";
+  description = "Project environment";
 
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
+  inputs.nixpkgs-playwright.url = "github:NixOS/nixpkgs/80d901ec0377e19ac3f7bb8c035201e2e098cc97";
+
   outputs = { self, nixpkgs }:
     let
-      system = "x86_64-linux";
       pgData = "$PWD/.devshell/postgres";
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfreePredicate = pkg: builtins.elem (nixpkgs.lib.getName pkg) [
           "claude-code"
         ];
-      };
+      };    
+      playwright = (import nixpkgs-playwright { inherit system; }).playwright-driver;
     in {
       devShells.${system}.default = pkgs.mkShell {
-      	name = "ctp";
+        name = "lmx";
         packages = with pkgs; [
           nodejs_22
           pnpm
@@ -29,13 +31,20 @@
 	        tsx
 	        deno
           claude-code
+          awscli2
+          docker
+          docker-compose
+          nodejs
+          pnpm
+          playwright.browsers
         ];
-
         shellHook = ''
+          source /etc/dotfiles/lib/project-identity.sh
+          
           export PGDATA="${pgData}"
           export PGHOST="$PWD/.devshell"
           export PGPORT=5433
-          export PGDATABASE=ctp
+          export PGDATABASE=lumix
           export PGUSER=$(whoami)
 
           if [ ! -d "$PGDATA" ]; then
@@ -58,13 +67,23 @@
           # export DATABASE_URL="postgres://$PGUSER@localhost:$PGPORT/$PGDATABASE?host=$PGHOST"
 
           echo ""
-          echo "ctp devShell ready."
+          echo "expense-tracker devShell ready."
           echo "  Node:     $(node --version)"
           echo "  pnpm:     $(pnpm --version)"
           echo "  Postgres: $(postgres --version | awk '{print $3}')"
           echo ""
           echo "Postgres commands:  pg_start | pg_stop | pg_psql | pg_createdb_if_missing"
           echo "Connection string:  $DATABASE_URL"
+
+          PRJ_ROOT=$(git rev-parse --show-toplevel 2>/dev/null || echo "$PWD")
+
+          if [ -f "$PRJ_ROOT/.env.aws" ]; then
+            source "$PRJ_ROOT/.env.aws"
+          fi
+
+          export PLAYWRIGHT_BROWSERS_PATH="${playwright.browsers}"
+          export PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1
+        
         '';
       };
     };

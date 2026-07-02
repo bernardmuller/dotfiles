@@ -42,6 +42,7 @@
     		spotify
 		discord
 		telegram-desktop
+		teams-for-linux
 	];
 
 	programs.git.enable = true;
