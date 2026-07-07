@@ -101,6 +101,7 @@ services.blueman.enable = true;
     tree-sitter
     gcc
     ripgrep
+    satty
   ];
 
   programs.hyprland.enable = true;
