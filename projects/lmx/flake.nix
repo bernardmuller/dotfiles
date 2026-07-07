@@ -5,13 +5,15 @@
 
   inputs.nixpkgs-playwright.url = "github:NixOS/nixpkgs/80d901ec0377e19ac3f7bb8c035201e2e098cc97";
 
-  outputs = { self, nixpkgs }:
+  outputs = { self, nixpkgs, nixpkgs-playwright }:
     let
+      system = "x86_64-linux";
       pgData = "$PWD/.devshell/postgres";
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfreePredicate = pkg: builtins.elem (nixpkgs.lib.getName pkg) [
           "claude-code"
+          "ngrok"
         ];
       };    
       playwright = (import nixpkgs-playwright { inherit system; }).playwright-driver;
@@ -19,7 +21,7 @@
       devShells.${system}.default = pkgs.mkShell {
         name = "lmx";
         packages = with pkgs; [
-          nodejs_22
+          nodejs_24
           pnpm
           postgresql_18
           python3
@@ -34,9 +36,8 @@
           awscli2
           docker
           docker-compose
-          nodejs
-          pnpm
           playwright.browsers
+          ngrok
         ];
         shellHook = ''
           source /etc/dotfiles/lib/project-identity.sh
