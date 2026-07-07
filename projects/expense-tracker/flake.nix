@@ -32,6 +32,8 @@
         ];
 
         shellHook = ''
+          source /etc/dotfiles/lib/project-identity.sh
+
           nxport PGDATA="${pgData}"
           export PGHOST="$PWD/.devshell"
           export PGPORT=5433
