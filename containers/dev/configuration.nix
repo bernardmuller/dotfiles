@@ -81,6 +81,10 @@
         lazygit
   ];
 
+  systemd.tmpfiles.rules = [
+  "d /run/postgresql 0755 root root -"
+];
+
   system.activationScripts.seedNvim = {
     deps = [ "users" ];
     text = ''

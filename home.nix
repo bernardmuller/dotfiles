@@ -43,6 +43,7 @@
 		discord
 		telegram-desktop
 		teams-for-linux
+		beekeeper-studio
 	];
 
 	programs.git.enable = true;

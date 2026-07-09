@@ -45,7 +45,7 @@
             mkdir -p "$PGDATA" "$PGHOST"
             initdb --auth=trust --no-locale --encoding=UTF8 --username="$PGUSER" "$PGDATA" >/dev/null
             echo "unix_socket_directories = '$PGHOST'" >> "$PGDATA/postgresql.conf"
-            echo "listen_addresses = '''"                >> "$PGDATA/postgresql.conf"
+            echo "listen_addresses = 'localhost'"        >> "$PGDATA/postgresql.conf"
             echo "port = $PGPORT"                       >> "$PGDATA/postgresql.conf"
           fi
 
