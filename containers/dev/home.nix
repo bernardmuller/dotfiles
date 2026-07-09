@@ -24,7 +24,13 @@
 				 user = "git";
 				 identityFile = "~/.ssh/lmx_ed25519";
 				 identitiesOnly = true;
-		       };
+		        };
+			"bitbucket-ctp" = {
+				 hostname = "bitbucket.org";
+				 user = "git";
+				 identityFile = "~/.ssh/ctp_ed25519";
+				 identitiesOnly = true;
+		        };
 		};
 	};
 
