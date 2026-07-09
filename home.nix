@@ -44,6 +44,7 @@
 		telegram-desktop
 		teams-for-linux
 		beekeeper-studio
+		obsidian
 	];
 
 	programs.git.enable = true;
