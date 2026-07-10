@@ -8,7 +8,7 @@
       "$terminal" = "kitty";
       "$fileManager" = "pcmanfm";
       "$menu" = "vicinae toggle";
-      "$browser" = "brave";
+      "$browser" = "zen-browser";
       "$mainMod" = "SUPER";
       "$bluetooth" = "bluetui";
 
