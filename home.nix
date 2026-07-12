@@ -45,6 +45,7 @@
 		teams-for-linux
 		beekeeper-studio
 		obsidian
+		freecad
 	];
 
 	programs.git.enable = true;
