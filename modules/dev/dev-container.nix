@@ -9,7 +9,7 @@ in
   networking.nat = {
     enable = true;
     internalInterfaces = [ "ve-+" ];
-    externalInterface = "wlp37s0";   
+    externalInterface = "enp34s0";   
 	};
 
   containers.dev = {
