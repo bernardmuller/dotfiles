@@ -45,6 +45,7 @@
 		teams-for-linux
 		beekeeper-studio
 		obsidian
+		bambu-studio
 		freecad
 	];
 

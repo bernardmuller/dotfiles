@@ -79,6 +79,8 @@
         prettierd
         stylua
         lazygit
+    openssl
+    opencode
   ];
 
   systemd.tmpfiles.rules = [
