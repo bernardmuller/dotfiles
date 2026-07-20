@@ -84,6 +84,10 @@
 
           export PLAYWRIGHT_BROWSERS_PATH="${playwright.browsers}"
           export PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1
+
+          grok() {
+            ngrok http http://10.233.1.2:3000
+          }
         
         '';
       };
