@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, unstablePkgs ... }:
 
 {
   users.users.bernard = {
@@ -80,7 +80,7 @@
         stylua
         lazygit
     openssl
-    opencode
+    unstablePkgs.herdr
   ];
 
   systemd.tmpfiles.rules = [

@@ -102,6 +102,11 @@ services.blueman.enable = true;
     gcc
     ripgrep
     flameshot
+    grim
+    slurp
+    swappy
+    xdg-desktop-portal
+    xdg-desktop-portal-gtk
   ];
 
   programs.hyprland.enable = true;
