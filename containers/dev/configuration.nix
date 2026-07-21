@@ -81,6 +81,7 @@
         lazygit
     openssl
     unstablePkgs.herdr
+    unstablePkgs.hunk
   ];
 
   systemd.tmpfiles.rules = [

@@ -51,6 +51,35 @@
 		];
 	};
 
+	home.file.".config/herdr/config.toml".text = ''
+	    [theme]
+	    # Choose one of the built-in themes:
+	    # name = "tokyo-night"          # Popular dark theme
+	    # name = "catppuccin"         # Default
+	    # name = "dracula"
+	    name = "gruvbox"
+	    # name = "one-dark"
+	    # name = "kanagawa"
+	    # name = "rose-pine"
+
+	    # Optional: Auto-switch between light/dark
+	    # auto_switch = true
+	    # light_name = "catppuccin-latte"
+	    # dark_name = "catppuccin"
+
+	    # Custom color overrides (optional)
+	    # [theme.custom]
+	    # accent = "#a6e3a1"
+	    # green = "#a6e3a1"
+	    # red = "#f38ba8"
+	    # yellow = "#f9e2af"
+	    # panel_bg = "#1e1e2e"
+	  '';
+
+	  home.activation.ensureHerdrConfig = config.lib.dag.entryAfter ["writeBoundary"] ''
+	    mkdir -p ${config.home.homeDirectory}/.config/herdr
+	  '';
+
 	programs.bash = {
 		  enable = true;
 		  shellAliases = {
