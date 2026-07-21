@@ -1,4 +1,5 @@
-description = "i use nixos btw";
+{
+  description = "i use nixos btw";
 
 inputs = {
   nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
