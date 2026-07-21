@@ -13,7 +13,9 @@ in
 
   containers.dev = {
     autoStart = true;
-    specialArgs = { inherit inputs; };
+    specialArgs = { 
+      inherit inputs unstablePkgs;   # ← important
+    };
     privateNetwork = true;
     hostAddress = "10.233.1.1";
     localAddress = "10.233.1.2";
