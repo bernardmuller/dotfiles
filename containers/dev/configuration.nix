@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, unstablePkgs ... }:
+{ config, pkgs, inputs, unstablePkgs, ... }:
 
 {
   users.users.bernard = {
