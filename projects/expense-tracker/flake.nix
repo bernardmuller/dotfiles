@@ -29,6 +29,14 @@
 	        tsx
 	        deno
           claude-code
+          opencode
+
+          # Go
+          go
+          gopls
+          golangci-lint
+          gotools
+          delve 
         ];
 
         shellHook = ''
@@ -67,6 +75,10 @@
           echo ""
           echo "Postgres commands:  pg_start | pg_stop | pg_psql | pg_createdb_if_missing"
           echo "Connection string:  $DATABASE_URL"
+
+          export GOPATH="$HOME/go"
+          export PATH="$GOPATH/bin:$PATH"
+          echo "Go $(go version | awk '{print $3}') ready"
         '';
       };
     };
