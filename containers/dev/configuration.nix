@@ -79,6 +79,8 @@
         prettierd
         stylua
         lazygit
+        gopls
+        
     openssl
     unstablePkgs.herdr
     unstablePkgs.hunk
